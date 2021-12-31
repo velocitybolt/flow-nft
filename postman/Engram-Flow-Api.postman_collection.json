@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "1c23cd14-a3d1-4d22-8813-74cc8223d760",
+		"name": "Engram-Flow-Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"item": [
+				{
+					"name": "Healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flow_api_url}}/api/healthcheck",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"healthcheck"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contracts",
+			"item": [
+				{
+					"name": "Deploy Main Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{flow_api_url}}/api/contract/deploy/main",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"contract",
+								"deploy",
+								"main"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EngramCoins",
+			"item": [
+				{
+					"name": "GetEngramCoinsSupply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flow_api_url}}/api/coin/supply",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"coin",
+								"supply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TransferEngramCoins",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ownerAddress\": \"0x55235252\",\n    \"receiverAddress\": \"0x353553\",\n    \"numCoinsToTransfer\": 100\n}"
+						},
+						"url": {
+							"raw": "{{flow_api_url}}/api/coin/transfer",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"coin",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Nfts",
+			"item": [
+				{
+					"name": "CreateNft",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 8,\n    \"userName\": \"test\",\n    \"mainOwnerAddress\": \"hex here\",\n    \"userAddress\": \"hex here\",\n    \"numberToMint\": 5\n}"
+						},
+						"url": {
+							"raw": "{{flow_api_url}}/api/nft",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"nft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNft",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flow_api_url}}/api/nft/0x532fa23",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"nft",
+								"0x532fa23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNfts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{flow_api_url}}/api/nft",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"nft"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallets",
+			"item": [
+				{
+					"name": "CreateAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 9,\n    \"userName\": \"engram\"\n}"
+						},
+						"url": {
+							"raw": "{{flow_api_url}}/api/account",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Wallet",
+			"item": [
+				{
+					"name": "GetUserEngramCoinsBalance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"userName\": \"test\",\n    \"address\": \"hex here\"\n}"
+						},
+						"url": {
+							"raw": "{{flow_api_url}}/api/user/balance",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserNfts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"userName\": \"test\",\n    \"address\": \"hex here\"\n}"
+						},
+						"url": {
+							"raw": "{{flow_api_url}}/api/user/nfts",
+							"host": [
+								"{{flow_api_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"nfts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "flow_api_url",
+			"value": "http://localhost:3001"
+		}
+	]
+}

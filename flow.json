@@ -1,0 +1,41 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+		"FungibleToken": "./cadence/contracts/FungibleToken.cdc",
+		"EngramToken": "./cadence/contracts/EngramToken.cdc"
+	},
+	"deployments": {
+		"emulator": { 
+			"emulator-account" : [
+				"FungibleToken",
+				"EngramToken"
+			]
+		}
+	},
+	"networks": {
+		"emulator": {
+			"host": "127.0.0.1:3569",
+			"chain": "flow-emulator"
+		},
+		"mainnet": {
+			"host": "access.mainnet.nodes.onflow.org:9000",
+			"chain": "flow-mainnet"
+		},
+		"testnet": {
+			"host": "access.devnet.nodes.onflow.org:9000",
+			"chain": "flow-testnet"
+		}
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"keys": "58d21f786881e01940b87680cca9a35400526be810b0159d3a9a96a8b14c4e9f",
+			"chain": "flow-emulator"
+		}
+	}
+}
